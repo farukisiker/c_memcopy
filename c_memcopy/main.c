@@ -159,6 +159,15 @@ int main(void) {
 }
 //OUTPUT
 /*
+Actual data for 1 byte
+1 4 5 7
+New memory copy for 1 byte
+1 4 5 7
+Classic memory copy for 1 byte
+1 4 5 7
+
+Actual data for 2 byte
+1 4 5 7
 New memory copy for 2 byte
 1 4 5 7
 Classic memory copy for 2 byte
