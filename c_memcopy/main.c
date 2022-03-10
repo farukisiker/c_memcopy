@@ -61,6 +61,11 @@ int main(void) {
 
 	myMemCpy(dest_1_0, src_1, length);
 	myMemCpy2(dest_1, src_1, length, sizeof(src_1));
+	printf("Actual data for 1 byte\n");
+	for (int i = 0; i < length; i++) {
+		printf("%c ", src_1[i]);
+	}
+	printf("\n");
 	printf("New memory copy for 1 byte\n");
 	for (int i = 0; i < length; i++) {
 		printf("%c ", dest_1[i]);
@@ -71,10 +76,15 @@ int main(void) {
 		printf("%c ", dest_1_0[i]);
 	}
 	printf("\n");
-
+	printf("\n");
 
 	myMemCpy(dest_2_0, src_2, length);
 	myMemCpy2(dest_2, src_2, length, sizeof(src_2));
+	printf("Actual data for 2 byte\n");
+	for (int i = 0; i < length; i++) {
+		printf("%d ", src_2[i]);
+	}
+	printf("\n");
 	printf("New memory copy for 2 byte\n");
 	for (int i = 0; i < length; i++) {
 		printf("%d ", dest_2[i]);
@@ -85,9 +95,15 @@ int main(void) {
 		printf("%d ", dest_2_0[i]);
 	}
 	printf("\n");
+	printf("\n");
 
 	myMemCpy(dest_4_0, src_4, length);
 	myMemCpy2(dest_4, src_4, length, sizeof(src_4));
+	printf("Actual data for 4 byte\n");
+	for (int i = 0; i < length; i++) {
+		printf("%d ", src_4[i]);
+	}
+	printf("\n");
 	printf("New memory copy for 4 byte\n");
 	for (int i = 0; i < length; i++) {
 		printf("%d ", dest_4[i]);
@@ -98,10 +114,15 @@ int main(void) {
 		printf("%d ", dest_4_0[i]);
 	}
 	printf("\n");
-
+	printf("\n");
 
 	myMemCpy(dest_8_0, src_8, length);
 	myMemCpy2(dest_8, src_8, length, sizeof(src_8));
+	printf("Actual data 8 byte\n");
+	for (int i = 0; i < length; i++) {
+		printf("%0.1f ", src_8[i]);
+	}
+	printf("\n");
 	printf("New memory copy for 8 byte\n");
 	for (int i = 0; i < length; i++) {
 		printf("%0.1f ", dest_8[i]);
@@ -112,6 +133,7 @@ int main(void) {
 		printf("%0.1f ", dest_8_0[i]);
 	}
 	printf("\n");
+	printf("\n");
 
 	float src_f[] = { 1.2f,2.1f,3,4 };
 	float dest_f[20];
@@ -119,6 +141,11 @@ int main(void) {
 
 	myMemCpy(dest_f_0, src_f, length);
 	myMemCpy2(dest_f, src_f, length, sizeof(src_f));
+	printf("Actual data for float\n");
+	for (int i = 0; i < length; i++) {
+		printf("%0.1f ", src_f[i]);
+	}
+	printf("\n");
 	printf("New memory copy for float\n");
 	for (int i = 0; i < length; i++) {
 		printf("%0.1f ", dest_f[i]);
@@ -132,24 +159,30 @@ int main(void) {
 }
 //OUTPUT
 /*
-New memory copy for 1 byte
-1 4 5 7
-Classic memory copy for 1 byte
-1 4 5 7
 New memory copy for 2 byte
 1 4 5 7
 Classic memory copy for 2 byte
 1 4 -13108 -13108
+
+Actual data for 4 byte
+1 4 5 7
 New memory copy for 4 byte
 1 4 5 7
 Classic memory copy for 4 byte
 1 -858993460 -858993460 -858993460
+
+Actual data 8 byte
+1.2 2.0 3.0 4.0
 New memory copy for 8 byte
 1.2 2.0 3.0 4.0
 Classic memory copy for 8 byte
 -92559604377396320631573109411943288059837260752080316881960960.0 -92559631349317830736831783200707727132248687965119994463780864.0 -92559631349317830736831783200707727132248687965119994463780864.0 -92559631349317830736831783200707727132248687965119994463780864.0
+
+Actual data for float
+1.2 2.1 3.0 4.0
 New memory copy for float
 1.2 2.1 3.0 4.0
 Classic memory copy for float
 1.2 -107374176.0 -107374176.0 -107374176.0
+
 */
