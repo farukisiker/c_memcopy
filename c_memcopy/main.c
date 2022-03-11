@@ -3,7 +3,19 @@
 
 void myMemCpy2(void* dest, void* src, size_t n, size_t s)
 {
+	char* csrc = (char*)src;
+	char* cdest = (char*)dest;
 	
+	for (int i = 0; i < n*s; i++)
+		*(cdest + i) = *(csrc + i);
+
+	printf("%zu byte is detected!", sizeof(cdest[0])*s);
+	printf("\n");
+	
+}
+
+void myMemCpy3(void* dest, void* src, size_t n, size_t s)
+{
 	if (s == 1) {
 		char* csrc = (char*)src;
 		char* cdest = (char*)dest;
